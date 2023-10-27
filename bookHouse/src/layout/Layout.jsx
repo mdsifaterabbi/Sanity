@@ -1,20 +1,24 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
+import { HelmetProvider, Helmet } from "react-helmet-async";
 
-const Layout = ({ children }) => {
+const Layout = ({ children,title }) => {
     return(
         <>
-            <header>
-                <Navbar />
-            </header>
+            <Helmet>
+                <title>{title}</title>
+            </Helmet>
 
+
+            <Navbar />
+            
             <main className="h-screen">
                 {  children }
             </main>
 
-            <footer>
-                <Footer />
-            </footer>
+           
+            <Footer />
+            
             
         </>
     )
