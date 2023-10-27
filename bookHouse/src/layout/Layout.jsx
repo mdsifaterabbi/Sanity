@@ -3,6 +3,12 @@ import Footer from "../components/Footer"
 import { HelmetProvider, Helmet } from "react-helmet-async";
 
 const Layout = ({ children,title }) => {
+
+    const myBg = {
+        backgroundColor: '#666',
+    }
+
+
     return(
         <>
             <Helmet>
@@ -12,7 +18,7 @@ const Layout = ({ children,title }) => {
 
             <Navbar />
             
-            <main className="h-screen">
+            <main style={myBg}>
                 {  children }
             </main>
 
