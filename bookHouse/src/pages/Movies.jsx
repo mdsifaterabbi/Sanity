@@ -6,9 +6,21 @@ const Movies = () => {
     return (
         <Layout title="Movies">
             <>
-                <div className="flex justify-center py-2">
-                    <input type="search" placeholder="Search movie..." className="input input-bordered" />
-                </div>
+                <section className="flex flex-wrap py-2 gap-3 justify-center">
+
+                    <input type="search" placeholder="Search movie..." className="input input-bordered bg-black rounded-xl basis-[60%] text-white border-white" />
+
+
+                    <select className="select w-full bg-black text-white basis-[25%]">
+                        <option disabled selected>Pick your favorite Simpson</option>
+                        <option>Homer</option>
+                        <option>Marge</option>
+                        <option>Bart</option>
+                        <option>Lisa</option>
+                        <option>Maggie</option>
+                    </select>
+
+                </section>
                 <div className="container flex flex-wrap mx-auto justify-center py-5 gap-7">
                     <MovieCard />
                     <MovieCard />

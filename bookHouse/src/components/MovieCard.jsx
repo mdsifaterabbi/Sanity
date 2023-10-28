@@ -2,7 +2,8 @@ import pathan_1 from '../assets/pathan_1.jpg'
 
 const MovieCard = () => {
     const myStyle = {
-        backgroundColor: 'goldenrod',
+        backgroundColor: 'black',
+        color: '#999999'
     }
     return (
         <>
@@ -12,7 +13,7 @@ const MovieCard = () => {
                     <h2 className="card-title">New movie is released!</h2>
                     <p>Click the button to watch on Jetflix app.</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Details</button>
+                        <button className="btn bg-white hover:bg-yellow-500">Details</button>
                     </div>
                 </div>
             </div>
