@@ -32,17 +32,17 @@ const MovieSlider = () => {
                 }}
                 keyboard={true}
                 modules={[Navigation, Pagination, Mousewheel, Keyboard, FreeMode]}
-                className="mySwiper"
+                className="mySwiper pb-2"
             >
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px' ,borderRadius: '30px' }} /></SwiperSlide>
 
 
 
