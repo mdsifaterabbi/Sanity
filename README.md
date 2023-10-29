@@ -1,2 +1,0 @@
-# Sanity
-Sanity bookhouse
