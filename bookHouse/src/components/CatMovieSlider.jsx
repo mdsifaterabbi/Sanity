@@ -4,15 +4,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import 'swiper/css/effect-cards';
+import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
 
-import styles from './Styles2.module.css';
-
+import './styles.css'
 
 // import required modules
-import { EffectCards } from 'swiper/modules';
+import { Navigation, Pagination, Mousewheel, Keyboard, FreeMode } from 'swiper/modules';
+
+
 
 import pathan_1 from '../assets/pathan_1.jpg'
 
@@ -21,20 +22,29 @@ const CatMovieSlider = () => {
     return (
         <>
             <Swiper
-                effect={'cards'}
-                grabCursor={true}
-                modules={[EffectCards]}
-                className="mySwiper"
+                mousewheel={true}
+                slidesPerView={6}
+                spaceBetween={30}
+                cssMode={true}
+                navigation={true}
+                pagination={{
+                    clickable: true,
+                }}
+                keyboard={true}
+                modules={[Navigation, Pagination, Mousewheel, Keyboard, FreeMode]}
+                className="mySwiper pb-2"
             >
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide><SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
             </Swiper>
         </>
     )

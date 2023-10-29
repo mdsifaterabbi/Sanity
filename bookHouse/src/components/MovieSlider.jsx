@@ -9,11 +9,14 @@ import 'swiper/css/free-mode';
 import './styles.css'
 
 // import required modules
-import { Navigation, Pagination, Mousewheel, Keyboard, FreeMode } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination, Mousewheel, Keyboard, FreeMode } from 'swiper/modules';
 
 
 
-import pathan_1 from '../assets/pathan_1.jpg'
+import pat_03 from '../assets/pat_03.jpg'
+import golmal from '../assets/golmal.jpg'
+import gadar from '../assets/gadar.jpg'
+import jawan from '../assets/jawan.jpg'
 
 
 const MovieSlider = () => {
@@ -22,6 +25,11 @@ const MovieSlider = () => {
 
         <>
             <Swiper
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                //grabCursor={true}
                 mousewheel={true}
                 slidesPerView={3}
                 spaceBetween={30}
@@ -31,19 +39,13 @@ const MovieSlider = () => {
                     clickable: true,
                 }}
                 keyboard={true}
-                modules={[Navigation, Pagination, Mousewheel, Keyboard, FreeMode]}
+                modules={[Autoplay,Navigation, Pagination, Mousewheel, Keyboard, FreeMode]}
                 className="mySwiper pb-2"
             >
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px',borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={pathan_1} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', marginBottom: '20px' ,borderRadius: '30px' }} /></SwiperSlide>
-
+                <SwiperSlide><img src={pat_03} alt="Movie" style={{ marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={golmal} alt="Movie" style={{ marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={gadar} alt="Movie" style={{ marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={jawan} alt="Movie" style={{ marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
 
 
             </Swiper>
