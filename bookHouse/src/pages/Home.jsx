@@ -1,9 +1,19 @@
+
+import { useContext } from "react"
 import CatMovieSlider from "../components/CatMovieSlider"
 import Category from "../components/Category"
 import MovieSlider from "../components/MovieSlider"
 import Layout from "../layout/Layout"
+import { MyMovie } from "../context/database"
 
+//MyMovie
 const Home = () => {
+
+    const  allData  = useContext(MyMovie);
+
+    console.log({allData});
+    
+
     return (
         <>
             <Layout title={"Home"}>
