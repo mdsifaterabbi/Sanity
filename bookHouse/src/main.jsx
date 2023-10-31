@@ -4,17 +4,19 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
-import { AllMovieContextProvider } from './context/database.jsx'
+import { AllCategoryContextProvider, AllMovieContextProvider } from './context/database.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
     <AllMovieContextProvider>
-      <HelmetProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </HelmetProvider>
+      <AllCategoryContextProvider>
+        <HelmetProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </HelmetProvider>
+      </AllCategoryContextProvider>
     </AllMovieContextProvider>
 
 

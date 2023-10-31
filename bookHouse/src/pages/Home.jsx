@@ -4,14 +4,16 @@ import CatMovieSlider from "../components/CatMovieSlider"
 import Category from "../components/Category"
 import MovieSlider from "../components/MovieSlider"
 import Layout from "../layout/Layout"
-import { MyMovie } from "../context/database"
+import { MyCat, MyMovie} from "../context/database"
 
 //MyMovie
 const Home = () => {
 
-    const  allData  = useContext(MyMovie);
+    const allMovie  = useContext(MyMovie);
+    console.log(allMovie);
 
-    console.log({allData});
+    const allCategory = useContext(MyCat);
+    console.log(allCategory);
     
 
     return (
