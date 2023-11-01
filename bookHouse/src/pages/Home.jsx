@@ -1,20 +1,19 @@
 
-import { useContext } from "react"
+//import { useContext } from "react"
 import CatMovieSlider from "../components/CatMovieSlider"
 import Category from "../components/Category"
 import MovieSlider from "../components/MovieSlider"
 import Layout from "../layout/Layout"
-import { MyCat, MyMovie} from "../context/database"
+//import { MyCat, MyMovie} from "../context/database"
 
 //MyMovie
 const Home = () => {
 
-    const allMovie  = useContext(MyMovie);
-    console.log(allMovie);
+    // const allMovie  = useContext(MyMovie);
+    // console.log(allMovie);
 
-    const allCategory = useContext(MyCat);
-    console.log(allCategory);
-    
+    // const allCategory = useContext(MyCat);
+    // console.log(allCategory);
 
     return (
         <>

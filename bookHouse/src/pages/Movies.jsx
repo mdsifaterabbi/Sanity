@@ -1,7 +1,15 @@
 import MovieCard from "../components/MovieCard"
 import Layout from "../layout/Layout"
+import { useContext } from "react"
+import { MyMovie } from "../context/database"
 
 const Movies = () => {
+
+    const { movies } = useContext(MyMovie);
+    const { categories } = useContext(MyMovie);
+
+    //console.log({categories})
+    //console.log({movies});
 
     return (
         <Layout title="Movies">
@@ -12,22 +20,20 @@ const Movies = () => {
 
 
                     <select className="select w-full bg-black text-white basis-[25%]">
-                        <option disabled selected>Pick your favorite Simpson</option>
-                        <option>Homer</option>
-                        <option>Marge</option>
-                        <option>Bart</option>
-                        <option>Lisa</option>
-                        <option>Maggie</option>
+                        <option disabled defaultValue={"selected"} >Pick your Category</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+
                     </select>
 
                 </section>
                 <div className="container flex flex-wrap mx-auto justify-center py-5 gap-7">
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
+                    {/* <MovieCard /> */}
+                    {
+                        movies.map((movie) => <MovieCard key={movie.movieName} movieInfo={movie} />)
+                    }
+
                 </div>
                 <div className="container text-center mx-auto py-5">
                     <a href="#" className="bg-purple-900 mr-2 py-[5px] px-[15px] no-underline text-white rounded-[30px] hover:bg-yellow-600 transition-all linear  duration-300">Prev</a>
