@@ -4,7 +4,7 @@ import CatMovieSlider from "../components/CatMovieSlider"
 import Category from "../components/Category"
 import MovieSlider from "../components/MovieSlider"
 import Layout from "../layout/Layout"
-//import { MyCat, MyMovie} from "../context/database"
+//import {MyMovie} from "../context/database"
 
 //MyMovie
 const Home = () => {

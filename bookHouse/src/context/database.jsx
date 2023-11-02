@@ -10,7 +10,7 @@ export function AllMovieContextProvider({ children }) { //this function is wrapp
     const [categories, setCategory] = useState([]);
 
     const getAllMovies = async () => {
-        const allMovies = await client.fetch("*[_type == 'movie']{movieName,'imageUrl': banner.asset->url}");
+        const allMovies = await client.fetch("*[_type == 'movie']{movieName,'imageUrl': banner.asset->url, category->{category} }");
         
 
         return setMovies(allMovies);
@@ -34,24 +34,3 @@ export function AllMovieContextProvider({ children }) { //this function is wrapp
     </MyMovie.Provider>
 }
 
-// export function AllCategoryContextProvider({ children }) { //this function is also wrapped in main.jsx
-
-//     const [category, setCategory] = useState([]);
-
-//     const getAllCategory = async () => {
-//         const allCategory = await client.fetch("*[_type == 'category']['category']");
-
-//         return setCategory(allCategory);
-//     }
-
-//     useEffect(() => {
-
-//         getAllCategory();
-
-//     }, [])
-
-//     return <MyCat.Provider value={{category}}>
-//         {children}
-//     </MyCat.Provider>
-
-// }

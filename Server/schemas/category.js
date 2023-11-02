@@ -9,5 +9,10 @@ export default {
         type: 'string',
         title: 'Movie Category'
       },
+      {
+        name: 'catImage',
+        type: 'image',
+        title: 'Category Image'
+      }
     ]
   }

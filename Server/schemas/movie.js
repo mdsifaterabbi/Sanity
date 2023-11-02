@@ -32,12 +32,6 @@ export default {
         type: 'reference',
         to: [{type: 'category' }]
       },
-      // {
-      //   name: 'director',
-      //   title: 'Director',
-      //   type: 'reference',
-      //   to: [{ type: 'poweredBy' }]
-      // },
       {
         name: 'director_producer',
         title:'Director and Producer',

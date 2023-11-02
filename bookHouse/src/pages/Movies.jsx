@@ -6,10 +6,8 @@ import { MyMovie } from "../context/database"
 const Movies = () => {
 
     const { movies } = useContext(MyMovie);
-    const { categories } = useContext(MyMovie);
-
-    //console.log({categories})
-    //console.log({movies});
+    
+    //console.log(movies);
 
     return (
         <Layout title="Movies">
