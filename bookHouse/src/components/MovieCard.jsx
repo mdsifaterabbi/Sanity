@@ -7,8 +7,9 @@ const MovieCard = ({ movieInfo }) => {
         backgroundColor: 'black',
         color: '#999999'
     }
-    const { movieName, imageUrl } = movieInfo;
+    const { movieName, imageUrl, _id } = movieInfo;
 
+    //console.log(_id)
 
     return (
         <>
@@ -22,7 +23,7 @@ const MovieCard = ({ movieInfo }) => {
                     <span>Category:{}</span>
                     <p>Click the button to watch on Jetflix app.</p>
                     <div className="card-actions justify-end">
-                        <Link to={'/movies/123'}><button className="btn bg-white hover:bg-yellow-500">Details</button></Link>
+                        <Link to={`/movies/${_id}`}><button className="btn bg-white hover:bg-yellow-500">Details</button></Link>
                     </div>
                 </div>
             </div>
