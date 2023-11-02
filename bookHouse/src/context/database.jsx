@@ -16,7 +16,7 @@ export function AllMovieContextProvider({ children }) { //this function is wrapp
         return setMovies(allMovies);
     }
     const getAllCategory = async () => {
-        const allCategory = await client.fetch("*[_type == 'category']['category']");
+        const allCategory = await client.fetch("*[_type == 'category']{category, 'imageUrlCat': catImage.asset->url, }");
         //const allCategory = await client.fetch("*[_type == 'category']");
 
         return setCategory(allCategory);

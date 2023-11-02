@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 /* ========================CatSlider CSS starts from here =========================== */
+.movieSlider:hover {
+    scale: 1.3;
+    transition: all linear 0.3s;
+}

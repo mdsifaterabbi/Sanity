@@ -17,9 +17,13 @@ import pat_03 from '../assets/pat_03.jpg'
 import golmal from '../assets/golmal.jpg'
 import gadar from '../assets/gadar.jpg'
 import jawan from '../assets/jawan.jpg'
+import { useContext } from 'react';
+import { MyMovie } from '../context/database';
 
 
 const MovieSlider = () => {
+
+    const { movies } = useContext(MyMovie);
 
     return (
 
@@ -32,20 +36,25 @@ const MovieSlider = () => {
                 //grabCursor={true}
                 mousewheel={true}
                 slidesPerView={3}
-                spaceBetween={30}
+                spaceBetween={0}
                 cssMode={true}
                 navigation={true}
                 pagination={{
                     clickable: true,
                 }}
                 keyboard={true}
-                modules={[Autoplay,Navigation, Pagination, Mousewheel, Keyboard, FreeMode]}
+                modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard, FreeMode]}
                 className="mySwiper pb-2"
             >
-                <SwiperSlide><img src={pat_03} alt="Movie" style={{ marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={golmal} alt="Movie" style={{ marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+
+
+                {
+                    movies.map(movie => <SwiperSlide key={movie._id}><img className='movieSlider' src={movie.imageUrl} alt="Movie" style={{ width: '400px', height: 'auto' ,marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>)
+                }
+
+                {/* <SwiperSlide><img src={golmal} alt="Movie" style={{ marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
                 <SwiperSlide><img src={gadar} alt="Movie" style={{ marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
-                <SwiperSlide><img src={jawan} alt="Movie" style={{ marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>
+                <SwiperSlide><img src={jawan} alt="Movie" style={{ marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide> */}
 
 
             </Swiper>
