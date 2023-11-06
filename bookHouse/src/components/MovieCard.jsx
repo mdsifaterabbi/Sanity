@@ -1,15 +1,18 @@
 import { PortableText } from '@portabletext/react';
 import pathan_1 from '../assets/pathan_1.jpg'
 import { Link } from 'react-router-dom'
+import { MyMovie } from '../context/database';
+import { useContext } from 'react';
 
 const MovieCard = ({ movieInfo }) => {
     const myStyle = {
         backgroundColor: 'black',
         color: '#999999'
     }
-    const { movieName, imageUrl, _id } = movieInfo;
+    const { movieName, imageUrl, _id, category } = movieInfo;
 
-    //console.log(_id)
+    const {addCardFunction} = useContext(MyMovie);
+
 
     return (
         <>
@@ -20,10 +23,11 @@ const MovieCard = ({ movieInfo }) => {
                     {/* <span>Casts: <PortableText
                         value={cast}
                     /> </span> */}
-                    <span>Category:{}</span>
+                    <span className='badge badge-success'>{category?.category}</span>
                     <p>Click the button to watch on Jetflix app.</p>
                     <div className="card-actions justify-end">
                         <Link to={`/movies/${_id}`}><button className="btn bg-white hover:bg-yellow-500">Details</button></Link>
+                        <button onClick={addCardFunction} className='btn btn-info'>Add to Cart</button>
                     </div>
                 </div>
             </div>

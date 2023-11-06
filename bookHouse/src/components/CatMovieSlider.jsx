@@ -44,7 +44,7 @@ const CatMovieSlider = () => {
             >
 
                 {
-                    categories.map(cat => <SwiperSlide key={cat.category}>
+                    categories.map(cat => <SwiperSlide key={cat._id}>
                         <div className='catSlider'>
                             <div className='badge badge-info'>{cat.category}</div>
                             <img src={cat.imageUrlCat} alt="Movie" title={cat.category} style={{ width: '300px', height: '300px', marginTop: '10px', marginBottom: '20px', borderRadius: '10px' }} />

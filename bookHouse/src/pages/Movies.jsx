@@ -5,23 +5,25 @@ import { MyMovie } from "../context/database"
 
 const Movies = () => {
 
-    const { movies } = useContext(MyMovie);
-    
-    //console.log(movies);
+    const { movies, searchByField, categories, searchByDropDown } = useContext(MyMovie);
+
+    const [category] = categories;
+
+    //console.log(category?.imageUrlCat);
 
     return (
         <Layout title="Movies">
             <>
                 <section className="flex flex-wrap py-2 gap-3 justify-center">
 
-                    <input type="search" placeholder="Search movie..." className="input input-bordered bg-black rounded-xl basis-[60%] text-white border-white" />
+                    <input onChange={searchByField} type="search" placeholder="Search movie..." className="input input-bordered bg-black rounded-xl basis-[60%] text-white border-white" />
 
 
-                    <select className="select w-full bg-black text-white basis-[25%]">
-                        <option disabled defaultValue={"selected"} >Pick your Category</option>
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
+                    <select id="dropdown_1" className="select w-full bg-black text-white basis-[25%]" onChange={searchByDropDown}
+                    >
+                        { 
+                           categories.map(cat => <option key={cat._id} value={cat.category}>{cat.category}</option>)
+                        }
 
                     </select>
 
@@ -29,7 +31,7 @@ const Movies = () => {
                 <div className="container flex flex-wrap mx-auto justify-center py-5 gap-7">
                     {/* <MovieCard /> */}
                     {
-                        movies.map((movie) => <MovieCard key={movie.movieName} movieInfo={movie} />)
+                        movies.map((movie) => <MovieCard key={movie._id} movieInfo={movie} />)
                     }
 
                 </div>

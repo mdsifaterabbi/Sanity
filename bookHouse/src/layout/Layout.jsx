@@ -5,7 +5,7 @@ import { HelmetProvider, Helmet } from "react-helmet-async";
 const Layout = ({ children,title }) => {
 
     const myBg = {
-        backgroundColor: '#666',
+        backgroundColor: '',
     }
 
 
