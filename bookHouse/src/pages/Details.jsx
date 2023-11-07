@@ -53,16 +53,11 @@ const Details = () => {
                                 
                             </div>
                         </div>
-                        {/* <div>
-                            <p><span className="text-red-500 font-bold">Casts:</span> <PortableText value={singleMovie?.cast} /></p>
-                        </div> */}
-
-                        {/* <button className="btn btn-accent w-[15%]" onClick={() => document.getElementById('my_modal_1').showModal()}>Watch Trailer</button> */}
-
+                       
                         <dialog id="my_modal_1" className="modal">
                             <div className="modal-box">
                                 <h3 className="font-bold text-lg">Trailer</h3>
-                                <ReactPlayer url={singleMovie?.trailerUrl} muted='true' volume="0.5" width={460} />
+                                <ReactPlayer url={singleMovie?.trailerUrl} muted='false' width={460} controls={true} />
                                 <p className="py-4">Press ESC key or click the button below to close</p>
                                 <div className="modal-action">
                                     <form method="dialog">
