@@ -35,7 +35,7 @@ const MovieSlider = () => {
                 }}
                 //grabCursor={true}
                 mousewheel={true}
-                slidesPerView={3}
+                slidesPerView={4}
                 spaceBetween={0}
                 cssMode={true}
                 navigation={true}
@@ -49,7 +49,7 @@ const MovieSlider = () => {
 
 
                 {
-                    movies.map(movie => <SwiperSlide key={movie._id}><img className='movieSlider' src={movie.imageUrl} alt="Movie" style={{ width: '400px', height: 'auto' ,marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>)
+                    movies.map(movie => <SwiperSlide key={movie._id}><img className='movieSlider' src={movie.imageUrl} alt="Movie" style={{ width: '300px', height: 'auto' ,marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>)
                 }
 
                 {/* <SwiperSlide><img src={golmal} alt="Movie" style={{ marginTop: '20px', marginBottom: '20px', borderRadius: '30px' }} /></SwiperSlide>

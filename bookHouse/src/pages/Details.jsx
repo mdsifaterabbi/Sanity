@@ -5,6 +5,7 @@ import { MyMovie } from "../context/database";
 import { client } from "../connection/sanity";
 import { PortableText } from "@portabletext/react";
 import ReactPlayer from "react-player";
+import { Link } from "react-router-dom";
 
 const Details = () => {
 
@@ -33,14 +34,30 @@ const Details = () => {
         <Layout title={"Movie Details"}>
             <section style={{ paddingTop: '15px', paddingBottom: '15px' }}>
                 <div className="card card-side bg-base-100 shadow-xl w-[80vw] mx-auto">
-                    <div style={{ width: '300px', height: 'auto' }}><img src={singleMovie?.imageUrl} alt="Movie" style={{ paddingTop: '0px', paddingBottom: '0px', paddingLeft: '0px' }} /></div>
+                    <div><img src={singleMovie?.imageUrl} alt="Movie" style={{ paddingTop: '0px', paddingBottom: '0px', paddingLeft: '0px' }} /></div>
                     <div className="card-body">
                         <h2 className="card-title">{singleMovie?.movieName}</h2>
                         <span className="badge badge-info font-bold">{singleMovie?.category?.category}</span>
                         <p><span className="text-red-500 font-bold">Details:</span> <PortableText value={singleMovie?.shortDesc} /> </p>
-                        <p><span className="text-red-500 font-bold">Casts:</span> <PortableText value={singleMovie?.cast} /></p>
 
-                        <button className="btn btn-success w-[15%]" onClick={() => document.getElementById('my_modal_1').showModal()}>Watch Trailer</button>
+                        <div className="w-[100%] h-[auto] flex flex-col sm:flex-col md:flex-row lg:flex-row">
+                            <div className="basis-1/1 sm:basis-1/1 md:basis-1/2 lg:basis-1/2">
+                                <p><span className="text-red-500 font-bold">Casts:</span> <PortableText value={singleMovie?.cast} /></p>
+                            </div>
+                            <div className="basis-1/1 sm:basis-1/1 md:basis-1/2 lg:basis-1/2">
+                                <button className="btn btn-success" onClick={() => document.getElementById('my_modal_1').showModal()}>Watch Trailer</button>
+
+                                <Link to="/movies">
+                                    <button className="btn btn-primary ml-[50px]">Back</button>
+                                </Link>
+                                
+                            </div>
+                        </div>
+                        {/* <div>
+                            <p><span className="text-red-500 font-bold">Casts:</span> <PortableText value={singleMovie?.cast} /></p>
+                        </div> */}
+
+                        {/* <button className="btn btn-accent w-[15%]" onClick={() => document.getElementById('my_modal_1').showModal()}>Watch Trailer</button> */}
 
                         <dialog id="my_modal_1" className="modal">
                             <div className="modal-box">
@@ -55,10 +72,11 @@ const Details = () => {
                             </div>
                         </dialog>
 
-
-                        <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Trailer</button>
-                        </div>
+                        {/* <div className="card-actions justify-end">
+                            <Link to="/movies">
+                                <button className="btn btn-primary">Back</button>
+                            </Link>
+                        </div> */}
                     </div>
                 </div>
             </section>

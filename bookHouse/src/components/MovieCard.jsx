@@ -1,13 +1,12 @@
 import { PortableText } from '@portabletext/react';
-import pathan_1 from '../assets/pathan_1.jpg'
 import { Link } from 'react-router-dom'
 import { MyMovie } from '../context/database';
 import { useContext } from 'react';
 
 const MovieCard = ({ movieInfo }) => {
     const myStyle = {
-        backgroundColor: 'black',
-        color: '#999999'
+        backgroundColor: '#030303',
+        color: '#ffffff'
     }
     const { movieName, imageUrl, _id, category } = movieInfo;
 
@@ -16,18 +15,14 @@ const MovieCard = ({ movieInfo }) => {
 
     return (
         <>
-            <div className="card shadow-xl w-[350px]" style={myStyle} >
-                <figure><img src={imageUrl} alt="Movie" style={{ width: '300px', height: '300px', marginTop: '20px', borderRadius: '30px' }} /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Movie Name: {movieName}</h2>
-                    {/* <span>Casts: <PortableText
-                        value={cast}
-                    /> </span> */}
+            <div className="card shadow-xl w-[250px] h-[auto]" style={myStyle} >
+                <figure><img src={imageUrl} alt="Movie" style={{ width: '100%', height: '250px',borderRadius: '15px' }} /></figure>
+                <div className="card-body p-3">
+                    <span className="text-sm">{movieName}</span>
                     <span className='badge badge-success'>{category?.category}</span>
-                    <p>Click the button to watch on Jetflix app.</p>
-                    <div className="card-actions justify-end">
-                        <Link to={`/movies/${_id}`}><button className="btn bg-white hover:bg-yellow-500">Details</button></Link>
-                        <button onClick={addCardFunction} className='btn btn-info'>Add to Cart</button>
+                    <div className="card-actions justify-start">
+                        <Link to={`/movies/${_id}`}><button className="badge badge-secondary">Details</button></Link>
+                        <button onClick={addCardFunction} className='badge badge-warning'>Add to Cart</button>
                     </div>
                 </div>
             </div>
