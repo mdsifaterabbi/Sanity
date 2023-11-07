@@ -21,8 +21,8 @@ const Movies = () => {
 
                     <select id="dropdown_1" className="select w-full bg-black text-white basis-[25%]" onChange={searchByDropDown}
                     >
-                        { 
-                           categories.map(cat => <option key={cat._id} value={cat.category}>{cat.category}</option>)
+                        {
+                            categories.map(cat => <option key={cat._id} value={cat.category}>{cat.category}</option>)
                         }
 
                     </select>

@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 import { client } from '../connection/sanity';
+import { toast } from 'react-toastify';
 
 export const MyMovie = createContext(); //creating context object named as MyMovie
 
@@ -8,10 +9,10 @@ export function AllMovieContextProvider({ children }) { //this function is wrapp
 
     const [movies, setMovies] = useState([]);
     const [categories, setCategory] = useState([]);
+    const [addToCart, setAddToCart] = useState([]);
 
     const getAllMovies = async () => {
-        const allMovies = await client.fetch("*[_type == 'movie']{movieName,'imageUrl': banner.asset->url, category->{category}, _id }");
-
+        const allMovies = await client.fetch("*[_type == 'movie']{movieName,'imageUrl': banner.asset->url, category->{category}, _id, cast, shortDesc }");
 
         return setMovies(allMovies);
     }
@@ -53,20 +54,24 @@ export function AllMovieContextProvider({ children }) { //this function is wrapp
 
         setMovies(searchResult2);
 
-
-
     }
 
     /*==============Data filter from dropdown ends here=================*/
 
     /*===========================add to card starts form here===============================*/
-    const [addToCard, setAddToCard] = useState([]);
 
-    const addCardFunction = () => {
-        console.log('Add Card working!');
+
+
+    const addCardFunction = (cartDataReceived) => {
+         //console.log('Add Card working!',cartDataReceived);
+        setAddToCart([...addToCart, cartDataReceived]);
+
+        toast.success("Product Added!",{position: "bottom-right",theme: "dark",});
     }
 
-    /*===========================add to card ends form here===============================*/
+    //console.log(addToCard);
+
+    /*===========================add to card ends here===============================*/
 
 
     useEffect(() => {
@@ -76,7 +81,7 @@ export function AllMovieContextProvider({ children }) { //this function is wrapp
 
     }, [])
 
-    return <MyMovie.Provider value={{ movies, categories, searchByField, searchByDropDown, addCardFunction }} >
+    return <MyMovie.Provider value={{ movies, categories, searchByField, searchByDropDown, addCardFunction, addToCart }} >
         {children}
     </MyMovie.Provider>
 }
